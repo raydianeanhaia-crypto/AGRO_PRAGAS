@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Pragas Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Cultivo Seguro</h1>
+        <p>O braço direito do produtor no controle de pragas e finanças</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="card">
+            <h2>O que é o Controle de Pragas?</h2>
+            <p>O controle de pragas é o conjunto de técnicas voltadas para a <strong>prevenção, monitoramento e redução</strong> de populações de insetos, roedores e microrganismos.</p>
+            
+            <h3>Como cuidar sem prejudicar a planta:</h3>
+            <ul>
+                <li><strong>Monitore sempre:</strong> Conheça sua lavoura diáriamente para agir no momento certo.</li>
+                <li><strong>Estimule inimigos naturais:</strong> Insetos como joaninhas ajudam a combater pragas sem química.</li>
+                <li><strong>Defensivos corretos:</strong> Use apenas produtos recomendados por especialistas e na dosagem certa para não sufocar a planta.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Dados de Monitoramento da Fazenda</h2>
+            <form id="form-fazenda">
+                <div class="form-group">
+                    <label for="nome-talhao">Nome do Talhão / Área:</label>
+                    <input type="text" id="nome-talhao" placeholder="Ex: Talhão Norte 01" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo-praga">Praga Encontrada:</label>
+                    <input type="text" id="tipo-praga" placeholder="Ex: Lagarta do Cartucho" required>
+                </div>
+                <div class="form-group">
+                    <label for="nivel-infestacao">Nível de Infestação:</label>
+                    <select id="nivel-infestacao">
+                        <option value="Baixo">Baixo (Apenas monitorar)</option>
+                        <option value="Médio">Médio (Alerta ligado)</option>
+                        <option value="Alto">Alto (Necessita intervenção)</option>
+                    </select>
+                </div>
+                <button type="submit">Salvar Registro</button>
+            </form>
+
+            <table id="tabela-dados">
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Praga</th>
+                        <th>Nível</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Controle Financeiro da Safra</h2>
+            <p>Insira seus valores para atualizar o gráfico de lucros e despesas.</p>
+            
+            <div class="financeiro-inputs">
+                <div class="form-group">
+                    <label for="input-lucro">Lucros Obtidos (R$):</label>
+                    <input type="number" id="input-lucro" value="5000" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="input-despesa">Despesas / Custos (R$):</label>
+                    <input type="number" id="input-despesa" value="2500" min="0">
+                </div>
+                <button type="button" onclick="atualizarGrafico()">Atualizar Gráfico</button>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="graficoFinanceiro"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Cultivo Seguro - Técnicas de Manejo Consciente.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
